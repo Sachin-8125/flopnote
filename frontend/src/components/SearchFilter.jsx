@@ -24,10 +24,10 @@ export default function SearchFilter({ onSearch, onFilter, showFavorites, onTogg
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-md p-6 mb-6">
+    <form onSubmit={handleSubmit} className="bg-gray-900 border border-gray-800 rounded-lg shadow-md p-6 mb-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
         <div>
-          <label className="block text-gray-700 text-sm font-semibold mb-2">
+          <label className="block text-gray-300 text-sm font-semibold mb-2">
             Search
           </label>
           <input
@@ -39,7 +39,7 @@ export default function SearchFilter({ onSearch, onFilter, showFavorites, onTogg
           />
         </div>
         <div>
-          <label className="block text-gray-700 text-sm font-semibold mb-2">
+          <label className="block text-gray-300 text-sm font-semibold mb-2">
             Tags (comma-separated)
           </label>
           <input
@@ -63,9 +63,9 @@ export default function SearchFilter({ onSearch, onFilter, showFavorites, onTogg
             type="checkbox"
             checked={showFavorites}
             onChange={onToggleFavorites}
-            className="mr-2 h-5 w-5 text-blue-600"
+            className="mr-2 h-5 w-5 text-blue-500 rounded focus:ring-blue-500 bg-gray-700 border-gray-600"
           />
-          <span className="text-gray-700 font-medium">Favorites Only</span>
+          <span className="text-gray-300 font-medium">Favorites Only</span>
         </label>
       </div>
     </form>

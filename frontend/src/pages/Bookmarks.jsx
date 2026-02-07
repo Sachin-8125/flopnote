@@ -158,14 +158,14 @@ export default function Bookmarks() {
     <ProtectedRoute>
       <div>
         <div className="flex justify-between items-center mb-6">
-          <h1 className="text-4xl font-bold text-gray-800">My Bookmarks</h1>
+          <h1 className="text-4xl font-bold text-white">My Bookmarks</h1>
           <button onClick={handleAddNew} className="btn-primary">
             + New Bookmark
           </button>
         </div>
 
         {error && (
-          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+          <div className="bg-red-900/50 border border-red-500 text-red-200 px-4 py-3 rounded mb-4">
             {error}
           </div>
         )}
@@ -179,11 +179,11 @@ export default function Bookmarks() {
 
         {loading ? (
           <div className="text-center py-12">
-            <div className="text-gray-600">Loading bookmarks...</div>
+            <div className="text-gray-400">Loading bookmarks...</div>
           </div>
         ) : bookmarks.length === 0 ? (
           <div className="text-center py-12">
-            <p className="text-gray-600 text-lg">
+            <p className="text-gray-400 text-lg">
               No bookmarks found. Create your first bookmark!
             </p>
           </div>
@@ -202,15 +202,15 @@ export default function Bookmarks() {
         )}
 
         {showModal && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-            <div className="bg-white rounded-lg p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-              <h2 className="text-2xl font-bold text-gray-800 mb-6">
+          <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4 backdrop-blur-sm">
+            <div className="bg-gray-900 border border-gray-800 rounded-lg p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+              <h2 className="text-2xl font-bold text-white mb-6">
                 {editingBookmark ? 'Edit Bookmark' : 'Create New Bookmark'}
               </h2>
 
               <form onSubmit={handleSubmit}>
                 <div className="mb-4">
-                  <label className="block text-gray-700 text-sm font-semibold mb-2">
+                  <label className="block text-gray-300 text-sm font-semibold mb-2">
                     URL *
                   </label>
                   <div className="flex gap-2">
@@ -236,7 +236,7 @@ export default function Bookmarks() {
                 </div>
 
                 <div className="mb-4">
-                  <label className="block text-gray-700 text-sm font-semibold mb-2">
+                  <label className="block text-gray-300 text-sm font-semibold mb-2">
                     Title *
                   </label>
                   <input
@@ -252,7 +252,7 @@ export default function Bookmarks() {
                 </div>
 
                 <div className="mb-4">
-                  <label className="block text-gray-700 text-sm font-semibold mb-2">
+                  <label className="block text-gray-300 text-sm font-semibold mb-2">
                     Description
                   </label>
                   <textarea
@@ -267,7 +267,7 @@ export default function Bookmarks() {
                 </div>
 
                 <div className="mb-4">
-                  <label className="block text-gray-700 text-sm font-semibold mb-2">
+                  <label className="block text-gray-300 text-sm font-semibold mb-2">
                     Tags (comma-separated)
                   </label>
                   <input
@@ -289,9 +289,9 @@ export default function Bookmarks() {
                       onChange={(e) =>
                         setFormData({ ...formData, isFavorite: e.target.checked })
                       }
-                      className="mr-2 h-5 w-5 text-blue-600"
+                      className="mr-2 h-5 w-5 text-blue-500 rounded focus:ring-blue-500 bg-gray-700 border-gray-600"
                     />
-                    <span className="text-gray-700 font-medium">
+                    <span className="text-gray-300 font-medium">
                       Mark as Favorite
                     </span>
                   </label>

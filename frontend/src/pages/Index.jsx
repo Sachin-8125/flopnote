@@ -13,10 +13,10 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[70vh]">
-      <h1 className="text-5xl font-bold text-gray-800 mb-4">
+      <h1 className="text-5xl font-bold text-white mb-4">
         Notes & Bookmarks Manager
       </h1>
-      <p className="text-xl text-gray-600 mb-8">
+      <p className="text-xl text-gray-300 mb-8">
         Organize your thoughts and favorite links in one place
       </p>
       <div className="space-x-4">

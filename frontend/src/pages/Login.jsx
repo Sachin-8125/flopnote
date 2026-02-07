@@ -35,20 +35,20 @@ export default function Login() {
 
   return (
     <div className="flex items-center justify-center min-h-[70vh]">
-      <div className="bg-white rounded-lg shadow-lg p-8 w-full max-w-md">
-        <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">
+      <div className="card w-full max-w-md">
+        <h2 className="text-3xl font-bold text-white mb-6 text-center">
           Login
         </h2>
 
         {error && (
-          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+          <div className="bg-red-900/50 border border-red-500 text-red-200 px-4 py-3 rounded mb-4">
             {error}
           </div>
         )}
 
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-semibold mb-2">
+            <label className="block text-gray-300 text-sm font-semibold mb-2">
               Email
             </label>
             <input
@@ -63,7 +63,7 @@ export default function Login() {
           </div>
 
           <div className="mb-6">
-            <label className="block text-gray-700 text-sm font-semibold mb-2">
+            <label className="block text-gray-300 text-sm font-semibold mb-2">
               Password
             </label>
             <input
@@ -86,9 +86,9 @@ export default function Login() {
           </button>
         </form>
 
-        <p className="mt-6 text-center text-gray-600">
+        <p className="mt-6 text-center text-gray-400">
           Don't have an account?{' '}
-          <Link to="/register" className="text-blue-600 hover:text-blue-800 font-semibold">
+          <Link to="/register" className="text-blue-500 hover:text-blue-400 font-semibold">
             Register
           </Link>
         </p>

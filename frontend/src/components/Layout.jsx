@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { authService } from '../lib/auth';
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { authService } from "../lib/auth";
 
 export default function Layout({ children }) {
   const location = useLocation();
@@ -22,27 +22,28 @@ export default function Layout({ children }) {
     return null;
   }
 
-  const isAuthPage = location.pathname === '/login' || location.pathname === '/register';
+  const isAuthPage =
+    location.pathname === "/login" || location.pathname === "/register";
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-transparent">
       {!isAuthPage && authService.isAuthenticated() && (
-        <nav className="bg-white shadow-lg">
+        <nav className="bg-gray-900 shadow-lg border-b border-gray-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between h-16">
               <div className="flex">
                 <div className="shrink-0 flex items-center">
-                  <Link to="/" className="text-xl font-bold text-blue-600">
-                    Notes & Bookmarks
+                  <Link to="/" className="text-xl font-bold text-blue-500">
+                    FlopNote
                   </Link>
                 </div>
                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
                   <Link
                     to="/notes"
                     className={`${
-                      location.pathname === '/notes'
-                        ? 'border-blue-500 text-gray-900'
-                        : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
+                      location.pathname === "/notes"
+                        ? "border-blue-500 text-white"
+                        : "border-transparent text-gray-400 hover:border-gray-600 hover:text-gray-200"
                     } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
                   >
                     Notes
@@ -50,9 +51,9 @@ export default function Layout({ children }) {
                   <Link
                     to="/bookmarks"
                     className={`${
-                      location.pathname === '/bookmarks'
-                        ? 'border-blue-500 text-gray-900'
-                        : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
+                      location.pathname === "/bookmarks"
+                        ? "border-blue-500 text-white"
+                        : "border-transparent text-gray-400 hover:border-gray-600 hover:text-gray-200"
                     } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
                   >
                     Bookmarks
@@ -60,7 +61,7 @@ export default function Layout({ children }) {
                 </div>
               </div>
               <div className="flex items-center">
-                <span className="text-gray-700 mr-4">
+                <span className="text-gray-300 mr-4">
                   Welcome, {user?.username}
                 </span>
                 <button
@@ -75,9 +76,7 @@ export default function Layout({ children }) {
         </nav>
       )}
       <main className="py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {children}
-        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">{children}</div>
       </main>
     </div>
   );
